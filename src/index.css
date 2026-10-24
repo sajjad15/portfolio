@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* الوضع الداكن يعتمد على class="dark" في عنصر html */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ألوان الوضع الفاتح */
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --fg: #111111;
+  --muted: #6b6b6b;
+  --border: #e3e0d8;
+  --accent: #6d5dfc;
+  --accent-fg: #ffffff;
+  --grad-1: #6d5dfc;
+  --grad-2: #b05cff;
+  --grad-3: #ff5ca8;
+  --glow-opacity: 0.28;
+}
+
+/* ألوان الوضع الداكن */
+.dark {
+  --bg: #0d0d0d;
+  --surface: #181818;
+  --fg: #f5f3ee;
+  --muted: #9a9a9a;
+  --border: #2a2a2a;
+  --accent: #8b7dff;
+  --accent-fg: #111111;
+  --grad-1: #8b7dff;
+  --grad-2: #c58bff;
+  --grad-3: #ff8ac0;
+  --glow-opacity: 0.35;
+}
+
+/* ربط المتغيرات بـ Tailwind: bg-bg, bg-surface, text-fg, text-muted, border-border, bg-accent ... */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+
+  --font-display: "Space Grotesk", "Cairo", system-ui, sans-serif;
+  --font-arabic: "Cairo", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: "Space Grotesk", "Cairo", system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* الخط العربي عند اللغة العربية */
+html[lang="ar"] body {
+  font-family: "Cairo", system-ui, sans-serif;
+}
+
+/* ليكون الانتقال للأقسام تحت الـ Navbar العائم */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* تدرج لوني متحرك للنص (يعمل في العربي والإنجليزي) */
+.gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    var(--grad-1),
+    var(--grad-2),
+    var(--grad-3),
+    var(--grad-2),
+    var(--grad-1)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-move 6s linear infinite;
+  padding-block: 0.15em;
+  display: inline-block;
+}
+
+@keyframes gradient-move {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* خلفية الشبكة (تتلاشى عند الأطراف) */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 25%, transparent 72%);
+  mask-image: radial-gradient(ellipse at center, #000 25%, transparent 72%);
+}
+
+/* توهج ضبابي يتحرك ببطء */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  background: var(--accent);
+  opacity: var(--glow-opacity);
+  animation: blob-float 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes blob-float {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(40px, -30px) scale(1.15);
+  }
+}
+
+/* طفو هادئ للشارات */
+.float-y {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* الشريط المتحرك */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* مؤشر الكتابة */
+.caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.1em;
+  margin-inline-start: 2px;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* إيقاف الحركات لمن يفضّلون تقليلها */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text,
+  .glow-blob,
+  .float-y,
+  .marquee-track,
+  .caret {
+    animation: none;
+  }
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-fg);
+}

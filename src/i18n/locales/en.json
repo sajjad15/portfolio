@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for new projects",
+    "greeting": "Hi, I'm",
+    "firstName": "Sajjad",
+    "lastName": "Mahdi",
+    "role": "Full-Stack Developer",
+    "tagline": "I build fast, clear and scalable websites and applications, from the interface to the server.",
+    "cta": "View my work",
+    "ctaSecondary": "Contact me",
+    "stats": {
+      "projects": "Projects done",
+      "years": "Years of experience"
+    }
+  },
+  "about": {
+    "label": "About me",
+    "title": "From idea to launch",
+    "p1": "I'm Sajjad Mahdi, an engineer and Full-Stack developer in tune with the latest web technologies. I design and develop websites and applications, from the initial concept all the way to final launch.",
+    "p2": "In my work I combine polished interfaces with smooth backend performance, giving users and organizations complete digital solutions that meet their needs and leave a strong, lasting impression.",
+    "cards": {
+      "specialty": {
+        "title": "Specialty",
+        "value": "Full-Stack Web Development"
+      },
+      "focus": {
+        "title": "Current focus",
+        "value": "Building modern, fast and responsive web apps"
+      },
+      "style": {
+        "title": "Work style",
+        "value": "Clean code + high performance + data security"
+      }
+    }
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "The tools I build with",
+    "subtitle": "Technologies I use daily to turn ideas into products that work efficiently.",
+    "groups": {
+      "frontend": "Front-End Development",
+      "backend": "Back-End Development",
+      "databases": "Databases & Storage",
+      "tools": "Tools & Workflow"
+    },
+    "items": {
+      "html": "Modern standards and responsive design",
+      "js": "Advanced JavaScript programming",
+      "react": "Interactive interfaces and dynamic components",
+      "next": "Fast web apps with Server-Side Rendering",
+      "tailwind": "Precise and fast styling",
+      "node": "Building servers and handling requests",
+      "rest": "Designing and connecting APIs",
+      "auth": "Securing users and managing sessions",
+      "sql": "Such as PostgreSQL or MySQL",
+      "nosql": "Such as MongoDB",
+      "dbdesign": "Schema design and efficient data management",
+      "git": "Version control and code management",
+      "postman": "Testing and developing APIs",
+      "bundlers": "Bundling and build tools",
+      "deploy": "Deploying sites on Vercel, Firebase and cloud servers"
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Work I'm proud of",
+    "subtitle": "Real projects live on the internet, from idea to launch.",
+    "live": "Live site",
+    "github": "Code on GitHub",
+    "items": {
+      "vortex": "A web gaming platform with 11 classic games (Snake, Tetris, 2048, Space Invaders and more), a premium dark design and an interactive 3D background, with a full login system and complete mobile support.",
+      "mrn": "An online store for men's accessories (bracelets, rings, necklaces, sunglasses) from Basra, with a minimalist ivory-and-copper design. It includes instant search and filtering, a shopping bag, ordering via WhatsApp with a gift option, and a protected dashboard for managing products, prices and availability.",
+      "kai": "An online streetwear store with a luxurious dark identity, designed for mobile. Customers browse products with photos and sizes, add them to the bag, fill in their details and get cash on delivery across all Iraqi governorates, then send the order through Instagram. All content is managed from an online dashboard.",
+      "yrmin": "A responsive website for a Lebanese restaurant in Riyadh, with dark and light modes, an interactive tabbed menu, a map, and a contact form that sends reservations via WhatsApp."
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "titleLine1": "Let's build something",
+    "titleLine2": "great together",
+    "subtitle": "Have a project idea or need a new website? Message me and I'll get back to you as soon as possible.",
+    "formTitle": "Send a quick message",
+    "formHint": "A WhatsApp chat will open with your message ready to send.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your idea or project here...",
+    "send": "Send via WhatsApp",
+    "waGreeting": "Hello Sajjad, I'm {{name}}.",
+    "emailLabel": "Or by email",
+    "footerRights": "All rights reserved",
+    "backToTop": "Back to top"
+  },
+  "toggles": {
+    "theme": "Toggle theme",
+    "language": "Toggle language",
+    "langLabel": "عربي"
+  }
+}
